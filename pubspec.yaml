@@ -32,6 +32,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.3.11
   firebase_core: ^1.13.1
+  image_picker: ^0.8.4+11
+  google_ml_kit: ^0.7.3
+
   flutter:
     sdk: flutter
   modal_progress_hud_alt: ^1.0.0

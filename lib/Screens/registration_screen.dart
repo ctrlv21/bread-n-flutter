@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_alt/modal_progress_hud_alt.dart';
 import '../components/rounded_button.dart';
 import '../constants.dart';
+import 'imageCapture.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -92,7 +93,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>{
                             setState(() {
                               showSpinner=false;
                             });
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Home()));
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>ImageCapture()));
                           }
                       }
                       catch(e)
