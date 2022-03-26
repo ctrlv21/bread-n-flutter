@@ -1,3 +1,4 @@
+import 'package:fnb/Screens/Home.dart';
 import 'package:fnb/Screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:fnb/Screens/welcome_screen.dart';
@@ -27,7 +28,7 @@ class OfferAssistant extends StatelessWidget {
         RegistrationScreen.id: (context)=>RegistrationScreen(),
         // ChatScreen.id: (context)=>ChatScreen(),
       },
-      home: Wrapper(),
+      home: Home(),
     );
   }
 }
