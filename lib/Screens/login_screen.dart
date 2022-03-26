@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         setState(() {
                           showSpinner = false;
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home(name: user.toString(),)));
                       }
                       catch(e)
                       {

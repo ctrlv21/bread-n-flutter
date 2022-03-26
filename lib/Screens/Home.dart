@@ -1,14 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:fnb/Model/offerDataModel.dart';
 import 'package:fnb/Screens/imageCapture.dart';
 import 'package:fnb/Screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fnb/constants.dart';
+import 'package:fnb/dataFetch/FirebaseFetch.dart';
 
 enum SingingCharacter { debit, credit }
 
 class Home extends StatefulWidget {
+  String name;
+
+  Home({required this.name});
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -20,6 +26,7 @@ class _HomeState extends State<Home> {
   SingingCharacter? _character = SingingCharacter.debit;
   int _selectedIndex=0;
   var cardNo = 0;
+  late List<OfferDataModel> data;
 
   static List<Widget> _pages = <Widget>[];
 
@@ -37,7 +44,13 @@ class _HomeState extends State<Home> {
       profile(),
       ImageCapture(),
       Center(
-        child:Text("third"),
+        child:TextButton(
+          child: Text("press"),
+          onPressed: () async{
+            FirebaseFetch dataFetch = new FirebaseFetch();
+            data = await dataFetch.getUserDetails("Axis");
+          },
+        )
       )
     ];
   }

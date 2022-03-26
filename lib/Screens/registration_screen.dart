@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:fnb/Screens/Home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>{
   String email='';
   String password = '';
   bool showSpinner = false;
+  String name="";
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +66,13 @@ class _RegistrationScreenState extends State<RegistrationScreen>{
                   height: 8.0,
                 ),
                 TextField(
+                  textAlign: TextAlign.center,
+                  onChanged: (value) {
+                    name = value;
+                  },
+                  decoration: kTextFieldDecoration.copyWith(hintText: 'Enter your Name'),
+                ),
+                TextField(
                   obscureText: true,
                   obscuringCharacter: '*',
                   textAlign: TextAlign.center,
@@ -93,7 +102,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>{
                             setState(() {
                               showSpinner=false;
                             });
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Home()));
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Home(name: name)));
                           }
                       }
                       catch(e)
