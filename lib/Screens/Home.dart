@@ -1,7 +1,7 @@
 import 'package:fnb/Screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fnb/Constants/constants.dart';
+import 'package:fnb/constants.dart';
 class Home extends StatelessWidget {
 
   String cc="";

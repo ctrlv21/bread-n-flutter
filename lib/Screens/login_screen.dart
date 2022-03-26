@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../components/rounded_button.dart';
-import '../Constants/constants.dart';
+import '../constants.dart';
 import 'package:modal_progress_hud_alt/modal_progress_hud_alt.dart';
 
 
