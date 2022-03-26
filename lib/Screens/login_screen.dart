@@ -1,6 +1,7 @@
 // import 'package:flash_chat/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fnb/Screens/Home.dart';
 
 import '../components/rounded_button.dart';
 import '../constants.dart';
@@ -118,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         setState(() {
                           showSpinner = false;
                         });
-                        // Navigator.pushNamed(context, ChatScreen.id);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
                       }
                       catch(e)
                       {
