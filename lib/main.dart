@@ -28,7 +28,7 @@ class OfferAssistant extends StatelessWidget {
         RegistrationScreen.id: (context)=>RegistrationScreen(),
         // ChatScreen.id: (context)=>ChatScreen(),
       },
-      home: Home(),
+      home: Wrapper(),
     );
   }
 }
