@@ -19,7 +19,7 @@ class _ImageCaptureState extends State<ImageCapture> {
   String displayText = "";
   late File imagePath;
   void captureImage() async{
-    XFile? image = await _capture.pickImage(source: ImageSource.camera);
+    XFile? image = await _capture.pickImage(source: ImageSource.camera,imageQuality: 100);
     setState(() {
       path = image?.path.toString();
       imagePath = File(image!.path);
@@ -50,22 +50,24 @@ class _ImageCaptureState extends State<ImageCapture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            ElevatedButton(
-              child: Text("Capture Image"),
-              onPressed: (){
-                captureImage();
-                setState(() {
-                  show_image = false;
-                  displayText = "";
-                });
-                },
-            ),
-            Text(displayText),
-            show_image?Image.file(imagePath,fit: BoxFit.fill,):Text("Image here"),
-          ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              ElevatedButton(
+                child: Text("Capture Image"),
+                onPressed: (){
+                  captureImage();
+                  setState(() {
+                    show_image = false;
+                    displayText = "";
+                  });
+                  },
+              ),
+              Text(displayText),
+              show_image?Image.file(imagePath,fit: BoxFit.fill,):Text("Image here"),
+            ],
+          ),
         ),
       ),
     );

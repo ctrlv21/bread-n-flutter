@@ -93,7 +93,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>{
                             setState(() {
                               showSpinner=false;
                             });
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>ImageCapture()));
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Home()));
                           }
                       }
                       catch(e)
